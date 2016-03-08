@@ -1,8 +1,7 @@
 var _      = require('lodash')
   , config = require('./config');
 
-var files = [];
-files.push(config.get("externals"));
+var files = config.get("externals");
 
 var add = config.get("add");
 if(!_.isEmpty(add)){

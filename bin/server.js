@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 var _       = require("lodash")
-  , config = require('./config')
+  , config = require('../plugin/config')
   , Server  = require('karma').Server
   , program = require('commander');
 

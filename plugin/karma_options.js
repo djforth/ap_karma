@@ -2,7 +2,7 @@ var _          = require('lodash')
   , config     = require('./config')
   , files      = require('./files')
   , browserify = require('./browserify')
-  , plugins    = require('./plugins');
+  , plugins    = require('./karma_plugins');
 
 
 var opts = {
@@ -61,3 +61,5 @@ var opts = {
   // concurrency: Infinity
   plugins: plugins
 }
+
+module.exports = opts;
