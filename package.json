@@ -1,6 +1,6 @@
 {
   "name": "@djforth/ap_karma",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Karam Jasmine helper",
   "main": "index.js",
   "scripts": {
