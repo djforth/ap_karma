@@ -1,0 +1,22 @@
+var config = require('./config');
+
+var plugins = [
+  'karma-jasmine'
+  , 'karma-firefox-launcher'
+  , 'karma-chrome-launcher'
+  , 'karma-safari-launcher'
+  , 'karma-phantomjs-launcher'
+  , 'karma-browserify'
+  , 'karma-story-reporter'
+  , 'karma-babel-preprocessor'
+  , 'karma-sourcemap-loader'
+  , 'babel-preset-es2015'
+];
+
+plugins = plugins.concat(config.get('plugins'));
+
+modules.exports = plugins.map(function(plugin){
+  return require(plugin)
+})
+
+
