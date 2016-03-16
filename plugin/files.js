@@ -1,13 +1,12 @@
 var _      = require('lodash')
+  , addFiles = require('./utils/set_files')
+  , addSpecs = require('./utils/set_specs')
   , config = require('./config');
 
+
 var files = config.get("externals");
-
-var add = config.get("add");
-if(!_.isEmpty(add)){
-  files.push({pattern:add, included: false});
-}
-
-files.push(config.get("input")+config.get("specs"));
+files = (_.isArray(files)) ? files : [files];
+files = files.concat(addFiles(config.get("add")));
+files = files.concat(addSpecs(config.get("specs"), config.get("input")));
 
 module.exports = files;
