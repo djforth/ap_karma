@@ -6,7 +6,7 @@ var preprocessors = {}
 let specs = addSpecs(config.get("specs"), config.get("input"))
 _.forEach(specs, function(spec){
   preprocessors[spec] = ['browserify', 'sourcemap'];
-})
+});
 
 var browserify = {
   debug: false,

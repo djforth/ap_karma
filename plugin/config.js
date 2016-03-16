@@ -16,7 +16,9 @@ var defaults = {
       ['babelify', {presets: ['es2015', 'react']}]
     ]
 }
-
+var js = utils({}, 'javascripts');
+transforms = defaults.transforms.concat(js.get("transforms"));
+defaults.transforms = _.uniqWith(transforms, _.isEqual)
 var config = utils(defaults, 'karma');
 
 module.exports = config;
