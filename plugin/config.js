@@ -4,6 +4,7 @@ var _ = require('lodash')
 
 var defaults = {
   specs      : '/**/*_spec.js'
+  , frameworks : []
   , externals  : [path.resolve('./node_modules/babel-polyfill/browser.js')]
   , browsers   : ['Chrome', 'PhantomJS', 'Safari', 'Firefox', 'Opera']
   , add        : []

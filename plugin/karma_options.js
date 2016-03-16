@@ -5,6 +5,8 @@ var _          = require('lodash')
   , plugins    = require('./karma_plugins');
 
 
+
+
 var opts = {
   // base path that will be used to resolve all patterns (eg. files, exclude)
   basePath: '',
@@ -12,7 +14,7 @@ var opts = {
 
   // frameworks to use
   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-  frameworks: ['browserify', 'jasmine'],
+  frameworks: ['browserify', 'jasmine'].concat(config.get('frameworks')),
 
 
   // list of files / patterns to load in the browser
