@@ -3,7 +3,7 @@ var _ = require("lodash")
   , addSpecs = require('./utils/set_specs');
 
 var preprocessors = {}
-let specs = addSpecs(config.get("specs"), config.get("input"))
+var specs = addSpecs(config.get("specs"), config.get("input"))
 _.forEach(specs, function(spec){
   preprocessors[spec] = ['browserify', 'sourcemap'];
 });
