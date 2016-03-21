@@ -18,8 +18,10 @@ var defaults = {
     ]
 }
 var js = utils({}, 'javascripts');
-transforms = defaults.transforms.concat(js.get("transforms"));
-defaults.transforms = _.uniqWith(transforms, _.isEqual)
+if(js && js.get("transforms")){
+  transforms = defaults.transforms.concat(js.get("transforms"));
+  defaults.transforms = _.uniqWith(transforms, _.isEqual);
+}
 var config = utils(defaults, 'karma');
 
 module.exports = config;
