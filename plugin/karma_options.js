@@ -22,8 +22,7 @@ var opts = {
 
 
   // list of files to exclude
-  exclude: [
-  ],
+  exclude: config.get('exclude'),
 
 
   // preprocess matching files before serving them to the browser
