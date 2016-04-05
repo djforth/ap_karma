@@ -26,7 +26,7 @@
   "homepage": "https://github.com/djforth/ap_karma#readme",
   "devDependencies": {
     "@djforth/ap_utils": "^2.0.12",
-    "babel-polyfill": "^6.6.1",
+    "babel-polyfill": "^6.2.4",
     "lodash": "^4.6.1"
   },
   "dependencies": {
@@ -56,7 +56,6 @@
   },
   "peerDependencies": {
     "@djforth/ap_utils": "^2.0.12",
-    "babel-polyfill": "^6.6.1",
     "lodash": "^4.6.1"
   }
 }
