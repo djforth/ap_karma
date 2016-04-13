@@ -25,9 +25,9 @@
   },
   "homepage": "https://github.com/djforth/ap_karma#readme",
   "devDependencies": {
-    "@djforth/ap_utils": "^2.0.12",
-    "babel-polyfill": "^6.2.4",
-    "lodash": "^4.6.1"
+    "@djforth/ap_utils": "^2.0.13",
+    "babel-polyfill": "^6.7.4",
+    "lodash": "~4.8.2"
   },
   "dependencies": {
     "babel": "^6.5.2",
@@ -39,7 +39,7 @@
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-babel-preprocessor": "^6.0.1",
-    "karma-browserify": "^5.0.2",
+    "karma-browserify": "^5.0.3",
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-ie-launcher": "^0.2.0",
@@ -49,13 +49,12 @@
     "karma-safari-launcher": "^0.1.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-story-reporter": "^0.3.1",
-    "lodash": "^4.6.1",
     "phantomjs-prebuilt": "^2.1.7",
     "rewireify": "^0.2.5",
     "watchify": "^3.7.0"
   },
   "peerDependencies": {
-    "@djforth/ap_utils": "^2.0.12",
-    "lodash": "^4.6.1"
+    "@djforth/ap_utils": "^2.0.13",
+    "lodash": "~4.8.2"
   }
 }
