@@ -55,6 +55,6 @@
   },
   "peerDependencies": {
     "@djforth/ap_utils": "^2.0.13",
-    "lodash": "~4.8.2"
+    "lodash": "^4.8.2"
   }
 }
