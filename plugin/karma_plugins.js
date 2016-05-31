@@ -6,7 +6,6 @@ var plugins = [
   , 'karma-chrome-launcher'
   , 'karma-safari-launcher'
   , 'karma-phantomjs-launcher'
-  , 'karma-browserify'
   , 'karma-story-reporter'
   , 'karma-babel-preprocessor'
   , 'karma-sourcemap-loader'

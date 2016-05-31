@@ -49,9 +49,11 @@
     "karma-safari-launcher": "^0.1.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-story-reporter": "^0.3.1",
+    "karma-webpack": "^1.7.0",
     "phantomjs-prebuilt": "^2.1.7",
     "rewireify": "^0.2.5",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "^1.13.1"
   },
   "peerDependencies": {
     "@djforth/ap_utils": "^2.0.13",

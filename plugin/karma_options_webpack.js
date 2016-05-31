@@ -1,14 +1,10 @@
 var _          = require('lodash')
   , config     = require('./config')
   , files      = require('./files')
-  , browserify = require('./browserify')
+  , webpack    = require('./webpack')
   , plugins    = require('./karma_plugins');
 
-
-plugins.push('karma-browserify');
-
-
-
+plugins.push('karma-webpack');
 
 var opts = {
   // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -17,7 +13,7 @@ var opts = {
 
   // frameworks to use
   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-  frameworks: ['browserify', 'jasmine'].concat(config.get('frameworks')),
+  frameworks: ['jasmine'].concat(config.get('frameworks')),
 
 
   // list of files / patterns to load in the browser
@@ -30,16 +26,7 @@ var opts = {
 
   // preprocess matching files before serving them to the browser
   // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-  preprocessors: browserify.preprocessors,
-
-  browserify: browserify.browserify,
-
-  babelPreprocessor: {
-    options: {
-      presets: ['es2015']
-    }
-  },
-
+  preprocessors: webpack.preprocessors,
 
 
   // test results reporter to use
@@ -50,7 +37,9 @@ var opts = {
   // enable / disable watching file and executing tests whenever any file changes
   autoWatch: true,
 
+  webpack: webpack.config,
 
+  webpackMiddleware: webpack.middleware,
   // start these browsers
   // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
   browsers: ['PhantomJS'],
