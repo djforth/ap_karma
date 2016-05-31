@@ -15,7 +15,7 @@ program
   .option('-b, --browsers', 'test all mac browsers')
   // .option('-ie, --e', 'Test IE11 & Edge browsers')
   .option('-w, --watch', 'Watch tests')
-  .option('-wp, --webpack', 'use webpack')
+  .option('-p, --webpack', 'use webpack')
   .parse(process.argv);
 
 if(program.browsers){
