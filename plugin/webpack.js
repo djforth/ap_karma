@@ -1,8 +1,11 @@
 var _ = require("lodash")
   , config = require('./config')
-  , addSpecs = require('./utils/set_specs');
+  , addSpecs = require('./utils/set_specs')
+  , path = require('path');
 
-var webpackConfig = require(config.get("webpack_config"))
+var wp_c = path.resolve(onfig.get("webpack_config"));
+
+var webpackConfig = require(wp_c)
 webpackConfig.module.loaders[0].query = {plugins: ['babel-plugin-rewire']}
 
 var preprocessors = {}
