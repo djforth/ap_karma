@@ -15,7 +15,5 @@ var plugins = [
 plugins = plugins.concat(config.get('plugins'));
 
 module.exports = plugins.map(function(plugin){
-  return require(plugin)
-})
-
-
+  return require(plugin);
+});

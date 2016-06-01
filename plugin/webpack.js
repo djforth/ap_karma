@@ -1,15 +1,15 @@
-var _ = require("lodash")
-  , config = require('./config')
-  , addSpecs = require('./utils/set_specs')
-  , path = require('path');
+var _ = require('lodash');
+var config = require('./config')
+  , addSpecs = require('./utils/set_specs');
+var path = require('path');
 
-var wp_c = path.resolve(onfig.get("webpack_config"));
+var wp_c = path.resolve(config.get('webpack_config'));
 
-var webpackConfig = require(wp_c)
-webpackConfig.module.loaders[0].query = {plugins: ['babel-plugin-rewire']}
+var webpackConfig = require(wp_c);
+webpackConfig.module.loaders[0].query = {plugins: ['babel-plugin-rewire']};
 
-var preprocessors = {}
-var specs = addSpecs(config.get("specs"), config.get("input"))
+var preprocessors = {};
+var specs = addSpecs(config.get('specs'), config.get('input'));
 _.forEach(specs, function(spec){
   preprocessors[spec] = ['webpack'];
 });
@@ -17,5 +17,5 @@ _.forEach(specs, function(spec){
 module.exports = {
   config: webpackConfig
   , middleware: {noInfo: true}
-  , preprocessors : preprocessors
-}
+  , preprocessors: preprocessors
+};

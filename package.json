@@ -4,6 +4,7 @@
   "description": "Karam Jasmine helper",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint plugin/**",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,6 +16,12 @@
     "Jasmine",
     "helper"
   ],
+  "eslintConfig": {
+    "extends": "morsedigital",
+    "rules": {
+      "require-jsdoc": 0
+    }
+  },
   "author": "A Stainforth",
   "license": "MIT",
   "bin": {
@@ -27,6 +34,9 @@
   "devDependencies": {
     "@djforth/ap_utils": "^2.0.13",
     "babel-polyfill": "^6.7.4",
+    "eslint": "^2.11.1",
+    "eslint-config-google": "^0.5.0",
+    "eslint-config-morsedigital": "^1.0.4",
     "lodash": "~4.8.2"
   },
   "dependencies": {

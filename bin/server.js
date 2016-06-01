@@ -1,12 +1,13 @@
 #! /usr/bin/env node
-var _       = require("lodash")
-  , config = require('../plugin/config')
-  , Server  = require('karma').Server
+var config = require('../plugin/config');
+var Server  = require('karma').Server
   , program = require('commander');
 
-
 function get_opts(wp){
-  var opts = (wp) ? '../plugin/karma_options_webpack' : '../plugin/karma_options';
+  var opts = '../plugin/karma_options';
+  if (wp){
+    opts += '_webpack';
+  }
   return require(opts);
 }
 
@@ -18,14 +19,15 @@ program
   .option('-p, --webpack', 'use webpack')
   .parse(process.argv);
 
-if(program.browsers){
-  options.browsers = config.get("browsers");
+var options = get_opts(program.webpack);
+
+if (program.browsers){
+  options.browsers = config.get('browsers');
 }
 
-if(program.watch) {
+if (program.watch){
   options.singleRun = false;
 }
 
-var options = get_opts(program.webpack);
-var server = new Server(options)
-server.start()
+var server = new Server(options);
+server.start();
