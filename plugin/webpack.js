@@ -16,12 +16,6 @@ _.forEach(specs, function(spec){
 
 module.exports = {
   config: webpackConfig
-  , externals: {
-    'cheerio': 'window'
-    , 'react/addons': true
-    , 'react/lib/ExecutionEnvironment': true
-    , 'react/lib/ReactContext': true
-  }
   , middleware: {noInfo: true}
   , preprocessors: preprocessors
 };
