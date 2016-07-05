@@ -31,7 +31,16 @@ var opts = {
   // test results reporter to use
   // possible values: 'dots', 'progress'
   // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-  , reporters: ['story', 'progress']
+  , reporters: ['spec']
+
+  , specReporter: {
+    maxLogLines: 5 // limit number of lines logged per test
+    , suppressErrorSummary: true  // do not print error summary
+    , suppressFailed: false  // do not print information about failed tests
+    , suppressPassed: false  // do not print information about passed tests
+    , suppressSkipped: true  // do not print information about skipped tests
+    , showSpecTiming: true // print the time elapsed for each spec
+  }
 
   // enable / disable watching file and executing tests whenever any file changes
   , autoWatch: true
