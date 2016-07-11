@@ -5,7 +5,7 @@ var path        = require('path');
 var defaults = {
   specs: '/**/*_spec.js'
   , frameworks: []
-  , externals: [path.resolve('./node_modules/babel-polyfill/browser.js')]
+  , externals: [path.resolve('./node_modules/babel-polyfill/dist/polyfill.js')]
   , browsers: ['Chrome', 'PhantomJS', 'Safari', 'Firefox', 'Opera']
   , add: []
   , input: path.resolve('app', 'assets_uncompiled', 'spec')

@@ -42,17 +42,23 @@ var opts = {
 
   , webpack: webpack.config
 
-  , webpackMiddleware: webpack.middleware
+  , webpackServer: {
+    noInfo: true //please don't spam the console when running in karma!
+  }
   // start these browsers
   // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
   , browsers: ['PhantomJS']
 
   // Continuous Integration mode
   // if true, Karma captures browsers, runs the tests and exits
-  , singleRun: true
+  , singleRun: false
+  , port: 9876
+  , colors: true
+  , logLevel: config.LOG_INFO
+  , autoWatch: true
   // Concurrency level
   // how many browser should be started simultanous
-  // concurrency: Infinity
+  , concurrency: Infinity
   , plugins: plugins
 };
 
