@@ -1,4 +1,5 @@
 var _ = require('lodash');
+_.uniqWith = require('lodash/uniqWith');
 var utils  = require('@djforth/ap_utils').config;
 var path        = require('path');
 
