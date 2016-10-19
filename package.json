@@ -1,6 +1,6 @@
 {
   "name": "@djforth/ap_karma_wp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Karma, Webpack Jasmine helper",
   "main": "index.js",
   "scripts": {
