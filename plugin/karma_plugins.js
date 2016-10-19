@@ -9,7 +9,8 @@ var plugins = [
   , 'karma-spec-reporter'
   , 'karma-babel-preprocessor'
   , 'karma-sourcemap-loader'
-  , 'babel-preset-es2015'
+  , 'karma-webpack'
+  , 'karma-coverage'
 ];
 
 plugins = plugins.concat(config.get('plugins'));
