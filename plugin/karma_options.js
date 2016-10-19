@@ -1,5 +1,5 @@
+
 var config     = require('./config')
-  , webpack    = require('./webpack')
   , plugins    = require('./karma_plugins');
 
 var opts = {
@@ -18,8 +18,8 @@ var opts = {
 
   // preprocess matching files before serving them to the browser
   // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-  , preprocessors:{
-    [config.get('input')]: [ 'webpack', 'sourcemap' ]
+  , preprocessors: {
+    [config.get('input')]: ['webpack', 'sourcemap']
   }
   // test results reporter to use
   // possible values: 'dots', 'progress'
@@ -36,31 +36,30 @@ var opts = {
   }
 
   // enable / disable watching file and executing tests whenever any file changes
-  , autoWatch: true
 
-  , webpack:{
+  , webpack: {
     // context: PATHS.src,
     devtool: 'inline-source-map'
     , plugins: [
     ]
-    , externals:{
+    , externals: {
       // cheerio: 'window',
       // jsdom: 'window',
-      'react/addons': true,
-      'react/lib/ExecutionEnvironment': true,
-      'react/lib/ReactContext': true
-    },
+      'react/addons': true
+      , 'react/lib/ExecutionEnvironment': true
+      , 'react/lib/ReactContext': true
+    }
 
-    module: {
+    , module: {
       loaders: [{
         test: /\.js$/
         , loader: 'babel'
         // , include: PATHS.src
-        , exclude: path.resolve(__dirname, 'node_modules')
+        , exclude: /node_modules/
         , query: {
           cacheDirectory: true
           , presets: ['airbnb']
-          , plugins: [ 'istanbul', 'rewire']
+          , plugins: ['istanbul', 'rewire']
 
         }
       }
@@ -72,23 +71,23 @@ var opts = {
   }
 
   , webpackServer: {
-    noInfo: true //please don't spam the console when running in karma!
+    noInfo: true
   }
 
   , coverageReporter: {
-      type: 'text-summary'
-      , dir: 'coverage/' //path to created html doc
-      , instrumenterOptions: {
-        istanbul: { noCompact: true }
-      }
-    },
+    type: 'text-summary'
+    , dir: 'coverage/'
+    , instrumenterOptions: {
+      istanbul: {noCompact: true}
+    }
+  }
   // start these browsers
   // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
   , browsers: ['PhantomJS']
 
   // Continuous Integration mode
   // if true, Karma captures browsers, runs the tests and exits
-  , singleRun: false
+  , singleRun: true
   , port: 9876
   , colors: true
   , logLevel: config.LOG_INFO
