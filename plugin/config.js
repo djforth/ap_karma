@@ -12,6 +12,8 @@ var defaults = {
   , exclude: []
   , ext: ['.js']
   , plugins: []
+  , coffeescript: false
+  , jquery: false
 };
 
 var config = utils(defaults, 'karma');

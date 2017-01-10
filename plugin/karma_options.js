@@ -1,6 +1,47 @@
+var webpack = require('webpack');
 
 var config     = require('./config')
   , plugins    = require('./karma_plugins');
+
+var webpack_plugins = [];
+
+if (config.get('jquery')){
+  webpack_plugins = [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
+  ]
+}
+
+var loaders = [
+  [{
+    test: /\.js$/
+    , loader: 'babel'
+    // , include: PATHS.src
+    , exclude: /node_modules/
+    , query: {
+      cacheDirectory: true
+      , presets: ['airbnb']
+      , plugins: ['istanbul', 'rewire']
+
+    }
+  }
+  , {
+    test: /\.json$/
+    , loader: 'json'
+  }]
+]
+
+if (config.get('coffeescript')){
+  loaders.push({
+    test: /\.coffee$/
+    , loader: 'coffee-loader'
+    // , include: PATHS.src
+    , cacheDirectory:true
+  });
+}
 
 var opts = {
   // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -8,7 +49,7 @@ var opts = {
 
   // frameworks to use
   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-  , frameworks: ['jasmine'].concat(config.get('frameworks'))
+  , frameworks: config.get('frameworks').concat(['jasmine'])
 
   // list of files / patterns to load in the browser
   , files: config.get('externals').concat(config.get('input'))
@@ -40,8 +81,7 @@ var opts = {
   , webpack: {
     // context: PATHS.src,
     devtool: 'inline-source-map'
-    , plugins: [
-    ]
+    , plugins: webpack_plugins
     , externals: {
       // cheerio: 'window',
       // jsdom: 'window',
@@ -51,22 +91,7 @@ var opts = {
     }
 
     , module: {
-      loaders: [{
-        test: /\.js$/
-        , loader: 'babel'
-        // , include: PATHS.src
-        , exclude: /node_modules/
-        , query: {
-          cacheDirectory: true
-          , presets: ['airbnb']
-          , plugins: ['istanbul', 'rewire']
-
-        }
-      }
-      , {
-        test: /\.json$/
-        , loader: 'json'
-      }]
+      loaders: loaders
     }
   }
 
