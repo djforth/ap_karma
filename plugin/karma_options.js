@@ -90,6 +90,11 @@ var opts = {
       , 'react/lib/ReactContext': true
     }
 
+    , resolve: {
+      modulesDirectories: ['node_modules']
+      , extensions: ['', '.js', '.jsx']
+    }
+
     , module: {
       loaders: loaders
     }
