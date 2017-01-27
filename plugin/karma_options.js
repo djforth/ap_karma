@@ -8,16 +8,16 @@ var webpack_plugins = [];
 if (config.get('jquery')){
   webpack_plugins = [
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
+      '$': 'jquery'
+      , 'jQuery': 'jquery'
+      , 'window.jQuery': 'jquery'
     })
-  ]
+  ];
 }
 
 var loaders = [
   [{
-    test: /\.js$/
+    test: /\.js|.jsx$/
     , loader: 'babel'
     // , include: PATHS.src
     , exclude: /node_modules/
@@ -32,14 +32,14 @@ var loaders = [
     test: /\.json$/
     , loader: 'json'
   }]
-]
+];
 
 if (config.get('coffeescript')){
   loaders.push({
     test: /\.coffee$/
     , loader: 'coffee-loader'
     // , include: PATHS.src
-    , cacheDirectory:true
+    , cacheDirectory: true
   });
 }
 

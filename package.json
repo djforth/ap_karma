@@ -1,10 +1,10 @@
 {
   "name": "@djforth/ap_karma_wp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Karma, Webpack Jasmine helper",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint plugin/**",
+    "lint": "eslint plugin/** --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
