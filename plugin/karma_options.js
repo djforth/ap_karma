@@ -102,6 +102,9 @@ var opts = {
 
   , webpackServer: {
     noInfo: true
+    , stats: {
+      chunks: false
+    }
   }
 
   , coverageReporter: {
