@@ -1,6 +1,6 @@
-var config = require('./config');
+let config = require('./config');
 
-var plugins = [
+let plugins = [
   'karma-jasmine'
   , 'karma-firefox-launcher'
   , 'karma-chrome-launcher'

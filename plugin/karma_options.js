@@ -1,9 +1,9 @@
-var webpack = require('webpack');
+let webpack = require('webpack');
 
-var config     = require('./config')
+let config     = require('./config')
   , plugins    = require('./karma_plugins');
 
-var webpack_plugins = [];
+let webpack_plugins = [];
 
 if (config.get('jquery')){
   webpack_plugins = [
@@ -15,7 +15,7 @@ if (config.get('jquery')){
   ];
 }
 
-var loaders = [
+let loaders = [
   [{
     test: /\.js|.jsx$/
     , loader: 'babel'
@@ -43,7 +43,7 @@ if (config.get('coffeescript')){
   });
 }
 
-var opts = {
+let opts = {
   // base path that will be used to resolve all patterns (eg. files, exclude)
   basePath: ''
 

@@ -1,9 +1,9 @@
-var _ = require('lodash');
+let _ = require('lodash');
 _.uniqWith = require('lodash/uniqWith');
-var utils  = require('@djforth/ap_utils').config;
-var path        = require('path');
+let utils  = require('@djforth/ap_utils').config;
+let path        = require('path');
 
-var defaults = {
+let defaults = {
   frameworks: []
   , externals: [path.resolve('./node_modules/babel-polyfill/dist/polyfill.min.js')]
   , browsers: ['Chrome', 'PhantomJS', 'Safari', 'Firefox', 'Opera']
@@ -16,6 +16,6 @@ var defaults = {
   , jquery: false
 };
 
-var config = utils(defaults, 'karma');
+let config = utils(defaults, 'karma');
 
 module.exports = config;
