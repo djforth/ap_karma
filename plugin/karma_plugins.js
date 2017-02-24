@@ -2,6 +2,7 @@ let config = require('./config');
 
 let plugins = [
   'karma-jasmine'
+  , 'karma-jasmine-matchers'
   , 'karma-firefox-launcher'
   , 'karma-chrome-launcher'
   , 'karma-safari-launcher'

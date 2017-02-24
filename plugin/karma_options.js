@@ -49,7 +49,7 @@ let opts = {
 
   // frameworks to use
   // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-  , frameworks: config.get('frameworks').concat(['jasmine'])
+  , frameworks: config.get('frameworks').concat(['jasmine', 'jasmine-matchers'])
 
   // list of files / patterns to load in the browser
   , files: config.get('externals').concat(config.get('input'))

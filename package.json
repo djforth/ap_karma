@@ -1,6 +1,6 @@
 {
   "name": "@djforth/ap_karma_wp",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Karma, Webpack Jasmine helper",
   "main": "index.js",
   "scripts": {
@@ -53,11 +53,13 @@
     "json-loader": "^0.5.4",
     "karma": "^1.5.0",
     "karma-babel-preprocessor": "^6.0.1",
+    "karma-benchmark": "^0.7.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.0",
+    "karma-jasmine-matchers": "^3.6.0",
     "karma-opera-launcher": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-safari-launcher": "^1.0.0",
@@ -68,9 +70,9 @@
   },
   "peerDependencies": {
     "@djforth/ap_utils": "^3.0.2",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-polyfill": "^6.22.0",
+    "babel-core": "^6.23.0",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.23.0",
     "lodash": "^4.17.4",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
