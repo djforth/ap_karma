@@ -6,7 +6,7 @@ let path        = require('path');
 let defaults = {
   frameworks: []
   , externals: [path.resolve('./node_modules/babel-polyfill/dist/polyfill.min.js')]
-  , browsers: ['Chrome', 'PhantomJS', 'Safari', 'Firefox', 'Opera']
+  , browsers: ['Chrome', 'PhantomJS', 'Safari', 'Firefox']
   // , add: []
   , input: path.resolve('app', 'assets_uncompiled', 'spec', 'test_bundle.js')
   , exclude: []
