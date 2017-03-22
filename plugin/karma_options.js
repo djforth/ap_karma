@@ -18,7 +18,7 @@ if (config.get('jquery')){
 let loaders = [
   [{
     test: /\.js|.jsx$/
-    , loader: 'babel'
+    , loader: 'babel-loader'
     // , include: PATHS.src
     , exclude: /node_modules/
     , query: {
@@ -30,7 +30,7 @@ let loaders = [
   }
   , {
     test: /\.json$/
-    , loader: 'json'
+    , loader: 'json-loader'
   }]
 ];
 
@@ -96,7 +96,7 @@ let opts = {
     }
 
     , module: {
-      loaders: loaders
+      rules: loaders
     }
   }
 

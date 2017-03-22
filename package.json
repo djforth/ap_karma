@@ -1,6 +1,6 @@
 {
   "name": "@djforth/ap_karma_wp",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Karma, Webpack Jasmine helper",
   "main": "index.js",
   "scripts": {
@@ -32,19 +32,29 @@
   },
   "homepage": "https://github.com/djforth/ap_karma#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.16.1",
+    "@djforth/ap_utils": "^3.0.4",
+    "@djforth/jest-call-helpers": "^1.0.0",
+    "@djforth/jest-matchers": "^1.0.2",
+    "@djforth/stubs-spy-manager-jest": "^1.0.9",
+    "@morsedigital/jest-config": "^1.0.0",
+    "babel-core": "^6.24.0",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "eslint": "^3.18.0",
     "eslint-config-google": "^0.7.1",
     "eslint-config-morsedigital": "^1.2.3",
+    "eslint-config-morsedigital-jest": "^1.0.1",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "mocha": "^3.2.0",
-    "mocha-eslint": "^3.0.1",
-    "rewire": "^2.5.2",
-    "sinon": "^1.17.7",
-    "sinon-chai": "^2.8.0"
+    "immutable": "^3.8.1",
+    "jest": "^19.0.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-istanbul": "^4.1.1",
     "babel-plugin-rewire": "^1.0.0",
     "babel-plugin-rewire-ignore-coverage": "^2.0.2",
     "babel-preset-airbnb": "^2.2.3",
@@ -56,16 +66,16 @@
     "karma-benchmark": "^0.7.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.1",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.0",
-    "karma-jasmine-matchers": "^3.6.0",
+    "karma-jasmine-matchers": "^3.7.0",
     "karma-opera-launcher": "^1.0.0",
-    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "karma-safari-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "^0.0.26",
-    "karma-webpack": "^2.0.2",
+    "karma-spec-reporter": "^0.0.30",
+    "karma-webpack": "^2.0.3",
     "phantomjs-prebuilt": "^2.1.14"
   },
   "peerDependencies": {
@@ -73,8 +83,8 @@
     "babel-core": "^6.23.0",
     "babel-loader": "^6.3.2",
     "babel-polyfill": "^6.23.0",
-    "lodash": "^4.17.4",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "lodash": ">=4.17.4",
+    "webpack": ">=2.3.1",
+    "webpack-dev-server": ">=2.4.2"
   }
 }
