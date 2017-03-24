@@ -16,14 +16,13 @@ if (config.get('jquery')){
 }
 
 let loaders = [
-  [{
+  {
     test: /\.js|.jsx$/
     , loader: 'babel-loader'
     // , include: PATHS.src
     , exclude: /node_modules/
     , query: {
       cacheDirectory: true
-      , presets: ['airbnb']
       , plugins: ['istanbul', 'rewire']
 
     }
@@ -31,7 +30,7 @@ let loaders = [
   , {
     test: /\.json$/
     , loader: 'json-loader'
-  }]
+  }
 ];
 
 if (config.get('coffeescript')){
@@ -81,18 +80,18 @@ let opts = {
   , webpack: {
     // context: PATHS.src,
     devtool: 'inline-source-map'
-    , plugins: webpack_plugins
-    , externals: {
-      // cheerio: 'window',
-      // jsdom: 'window',
-      'react/addons': true
-      , 'react/lib/ExecutionEnvironment': true
-      , 'react/lib/ReactContext': true
-    }
+    // , plugins: webpack_plugins
+    // , externals: {
+    //   // cheerio: 'window',
+    //   // jsdom: 'window',
+    //   'react/addons': true
+    //   , 'react/lib/ExecutionEnvironment': true
+    //   , 'react/lib/ReactContext': true
+    // }
 
     , resolve: {
-      modulesDirectories: ['node_modules']
-      , extensions: ['', '.js', '.jsx']
+      extensions: ['.js', '.jsx']
+      , modules: ['node_modules']
     }
 
     , module: {
@@ -100,12 +99,12 @@ let opts = {
     }
   }
 
-  , webpackServer: {
-    noInfo: true
-    , stats: {
-      chunks: false
-    }
-  }
+  // , webpackServer: {
+  //   noInfo: true
+  //   , stats: {
+  //     chunks: false
+  //   }
+  // }
 
   , coverageReporter: {
     type: 'text-summary'
