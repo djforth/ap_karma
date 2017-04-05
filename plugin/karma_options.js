@@ -92,6 +92,12 @@ let opts = {
     , resolve: {
       extensions: ['.js', '.jsx']
       , modules: ['node_modules']
+      , alias: {
+        packs: resolve('app', 'javascripts', 'packs')
+        , src: resolve('src')
+        , tests: resolve('app', 'javascripts', '__tests__')
+        , test: resolve('__tests__')
+      }
     }
 
     , module: {
