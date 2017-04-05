@@ -1,5 +1,5 @@
 let webpack = require('webpack');
-
+let {resolve} = require('path');
 let config     = require('./config')
   , plugins    = require('./karma_plugins');
 
@@ -91,11 +91,17 @@ let opts = {
 
     , resolve: {
       extensions: ['.js', '.jsx']
-      , modules: ['node_modules']
+      , modules: [
+        'node_modules'
+        , resolve('app', 'javascript', 'packs')
+        , resolve('src')
+        , resolve('app', 'javascript', '__tests__')
+        , resolve('__tests__')
+      ]
       , alias: {
-        packs: resolve('app', 'javascripts', 'packs')
+        packs: resolve('app', 'javascript', 'packs')
         , src: resolve('src')
-        , tests: resolve('app', 'javascripts', '__tests__')
+        , tests: resolve('app', 'javascript', '__tests__')
         , test: resolve('__tests__')
       }
     }
