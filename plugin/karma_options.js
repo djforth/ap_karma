@@ -37,8 +37,7 @@ if (config.get('coffeescript')){
   loaders.push({
     test: /\.coffee$/
     , loader: 'coffee-loader'
-    // , include: PATHS.src
-    , cacheDirectory: true
+    , exclude: /node_modules/
   });
 }
 
