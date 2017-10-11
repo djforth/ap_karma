@@ -32,18 +32,17 @@
   },
   "homepage": "https://github.com/djforth/ap_karma#readme",
   "devDependencies": {
+    "eslint": "^4.8.0"
+  },
+  "dependencies": {
     "@djforth/ap_utils": "^3.1.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
-    "eslint": "^4.8.0",
-    "immutable": "^3.8.2",
+    "babel-preset-env": "^1.6.0",
     "lodash": "^4.17.4",
-    "moment": "^2.19.0",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.9.1",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-rewire": "^1.1.0",
     "babel-plugin-rewire-ignore-coverage": "^2.0.2",
@@ -67,15 +66,5 @@
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.5",
     "phantomjs-prebuilt": "^2.1.15"
-  },
-  "peerDependencies": {
-    "@djforth/ap_utils": ">=3.1.2",
-    "babel-core": ">=6.26.0",
-    "babel-loader": ">=7.1.2",
-    "babel-polyfill": ">=6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "lodash": ">=4.17.4",
-    "webpack": ">=3.6.0",
-    "webpack-dev-server": ">=2.9.1"
   }
 }
