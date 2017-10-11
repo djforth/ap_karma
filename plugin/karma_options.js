@@ -17,14 +17,36 @@ if (config.get('jquery')){
 
 let loaders = [
   {
-    test: /\.js|.jsx$/
-    , loader: 'babel-loader'
+    test: /\.(js|jsx)?(\.erb)?$/,
+    loader: 'babel-loader',
+    // , loader: 'babel-loader'
     // , include: PATHS.src
-    , exclude: /node_modules/
-    , query: {
-      cacheDirectory: true
-      , plugins: ['istanbul', 'rewire']
-
+    exclude: /node_modules/,
+    query: {
+      cacheDirectory: true,
+      plugins: [[
+        "istanbul",
+        {
+          "exclude": [
+            "**/*_spec.js"
+          ]
+        }
+      ],
+      "rewire"],
+      presets: [
+        // ["es2015", {"modules": false}],
+        ["env", {
+          modules: false,
+          "targets": {
+              'node': 4,
+              "browsers": [
+                "last 2 versions",
+                "chrome >= 55",
+                "IE >= 11"
+              ]
+            }
+        }]
+      ]
     }
   }
   , {
@@ -77,17 +99,7 @@ let opts = {
   // enable / disable watching file and executing tests whenever any file changes
 
   , webpack: {
-    // context: PATHS.src,
     devtool: 'inline-source-map'
-    // , plugins: webpack_plugins
-    // , externals: {
-    //   // cheerio: 'window',
-    //   // jsdom: 'window',
-    //   'react/addons': true
-    //   , 'react/lib/ExecutionEnvironment': true
-    //   , 'react/lib/ReactContext': true
-    // }
-
     , resolve: {
       extensions: ['.js', '.jsx']
       , modules: [
